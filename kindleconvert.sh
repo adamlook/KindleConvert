@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/sh -xv
 
 if [ -z "$1" ] ; then
 cat <<EOF
@@ -36,8 +36,8 @@ else
     epubfolder=~/Desktop/KindleConvertOutput/"$filename"
     epubfile="$epubfolder"/mobi8/"$filename".epub
     mkdir -p "$epubfolder"
-    pyscript=`dirname "$0"`
-    pyscript="$pyscript"/KindleUnpack/lib/kindleunpack.py
+    scripthome=`dirname "$0"`
+    pyscript="$scripthome"/KindleUnpack/lib/kindleunpack.py
     python "$pyscript" "$full_filename" "$epubfolder"
 
 fi
@@ -47,8 +47,8 @@ if [ -f "$epubfile" ] ; then
     echo "*************************************************************"
     echo "           STARTING CONVERT TO MOBI FILE"
     echo "*************************************************************"
-    mobifile=`/home/"$username"/kindleconvert/"$filename"/filename.mobi`
-    kendlegen=$(cd "$(dirname "$0")"; pwd)
-    kindlegen="$kindlegen"/KindleGen_Mac_i386_v2_9/kindlegen
-    kindlegen -dont_append_source "$epubfile" -o "$mobifile"
+    mobifile="$filename".mobi
+    kindlegen="$scripthome"/KindleGen_Mac_i386_v2_9/kindlegen
+    kindlegen "$epubfile" -o "$mobifile" -c0
+#    kindlegen -dont_append_source "$epubfile" -o "$mobifile"
 fi
