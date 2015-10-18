@@ -6,9 +6,9 @@
     so he or she can use the function of book sync of Amazon.
 
 2,This tool is based on KindleUnpack and KindleGen,i just put all these functions together.
-
-   I will add more functions depend on my own need.
-   Functions that most people are using also will be supported.
-   Graphic UI for both MS-Windows and MAC is also under considered.
-   For now,its just a linux shell script,you may need some computer skills.
-   According to support cross platform, i will rewrite it with Python.
+    
+    I will add more functions depend on my own need.
+    Functions that most people are using also will be supported.
+    Graphic UI for both MS-Windows and MAC is also under considered.
+    For now,its just a linux shell script,you may need some computer skills.
+    According to support cross platform, i will rewrite it with Python.
