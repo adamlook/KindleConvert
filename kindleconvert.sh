@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/sh 
 
 if [ -z "$1" ] ; then
 cat <<EOF
 *************************************************************
- kindleconvert [https://github.com/adamlook/KinldeConvert]
+ kindleconvert [https://github.com/adamlook/KindleConvert]
  based on below tools:
  KindleUnpack V0.80 from https://github.com/kevinhendricks/KindleUnpack.git
  Amazon kindlegen(MAC OSX) V2.9 build 1028-0897292 
@@ -11,7 +11,7 @@ cat <<EOF
 Usage : kindleconvert [filename.azw3 or direcotry] [-append_source]
 
 Note:
-https://github.com/adamlook/KinldeConvert    
+
 EOF
 exit 1
 fi
@@ -33,10 +33,10 @@ else
     echo "               STARTING UNPACK AZW3 FILE"
     echo "*************************************************************"
     filename=`basename "$full_filename" | sed 's:\..*::'`
-    epubfolder=~/Desktop/kindleconvert/"$filename"
+    epubfolder=~/Desktop/KindleConvertOutput/"$filename"
     epubfile="$epubfolder"/mobi8/"$filename".epub
     mkdir -p "$epubfolder"
-    pyscript=$(cd "$(dirname "$0")"; pwd)
+    pyscript=`dirname "$0"`
     pyscript="$pyscript"/KindleUnpack/lib/kindleunpack.py
     python "$pyscript" "$full_filename" "$epubfolder"
 
